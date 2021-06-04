@@ -1,0 +1,194 @@
+/* Primary */
+$Red: hsl(0, 100%, 74%);
+$Green: hsl(154, 59%, 51%);
+
+/* Accent */
+
+$Blue: hsl(248, 32%, 49%);
+
+/* Neutral */
+
+$Dark-Blue: hsl(249, 10%, 26%);
+$Grayish-Blue: hsl(246, 25%, 77%);
+
+/* Default fonts */
+$Poppins: "Poppins", sans-serif;
+
+:root {
+	font-size: 16px;
+}
+
+@mixin only-for-mobile {
+	@media (max-width: 940px) {
+		@content;
+	}
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: $Poppins;
+}
+
+body {
+	max-width: 1440px;
+	margin: 0 auto;
+	background-color: $Red;
+	background-image: url(../images/bg-intro-desktop.png);
+	background-size: cover;
+}
+
+.main {
+	padding: 20px;
+	margin-top: 3em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "main__learn main__subscribe";
+	gap: 4em;
+	justify-content: center;
+
+	@include only-for-mobile() {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"main__learn"
+			"main__subscribe";
+		align-content: baseline;
+		height: auto;
+		padding-top: 5em;
+		padding-bottom: 3em;
+	}
+
+	&__learn {
+		grid-area: main__learn;
+		padding-left: 6em;
+		align-self: center;
+
+		@include only-for-mobile() {
+			padding-left: 0;
+			text-align: center;
+		}
+
+		&__title {
+			font-size: 50px;
+			line-height: 60px;
+			font-weight: 700;
+			color: white;
+		}
+
+		&__text {
+			margin-top: 30px;
+			font-size: 18px;
+			color: white;
+		}
+	}
+
+	&__subscribe {
+		grid-area: main__subscribe;
+
+		&__link {
+			text-decoration: none;
+			color: white;
+			font-weight: 600;
+			background-color: $Blue;
+			font-size: 20px;
+			border-radius: 15px;
+			padding: 1em 0;
+			display: block;
+			text-align: center;
+
+			> span {
+				opacity: 0.4;
+				font-weight: 400;
+			}
+		}
+
+		&__info {
+			padding: 30px;
+			margin-top: 1em;
+			background-color: white;
+			border-radius: 15px;
+		}
+		&__form {
+			display: flex;
+			flex-direction: column;
+		}
+		&__input-with-icon {
+			position: relative;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row-reverse;
+
+			> ion-icon {
+				position: absolute;
+				right: 1em;
+				top: 1.1em;
+				font-size: 2em;
+				border-radius: 30px;
+				background-color: $Red;
+				visibility: hidden;
+
+				&.error--hide {
+					visibility: visible;
+				}
+			}
+		}
+
+		&__input {
+			margin: 1em;
+			padding: 2em;
+			border: 1px solid $Grayish-Blue;
+			border-radius: 15px;
+			outline: 0;
+			font-weight: 700;
+			width: 100%;
+
+			&.error--hide {
+				border: 5px solid #ff5466;
+			}
+		}
+
+		&__error {
+			color: $Red;
+			display: flex;
+			flex-direction: row-reverse;
+			margin-right: 1em;
+			font-style: italic;
+			visibility: hidden;
+
+			&.error--hide {
+				visibility: visible;
+			}
+		}
+
+		&__btn {
+			background-color: $Green;
+			align-self: center;
+			color: white;
+			border: none;
+			cursor: pointer;
+			border-radius: 10px;
+			padding: 1em;
+			font-size: 22px;
+			font-weight: 700;
+			width: 96%;
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+
+		&__p {
+			padding-top: 20px;
+			font-size: 11px;
+			text-align: center;
+			opacity: 0.7;
+
+			> span {
+				color: rgba($Red, 1);
+				font-size: 13px;
+				font-weight: 700;
+			}
+		}
+	}
+}

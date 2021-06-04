@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+		<title>Intro component with sign up form</title>
+	</head>
+	<body>
+		<div class="main">
+			<section class="main__learn">
+				<h1 class="main__learn__title">Learn to code by watching others</h1>
+				<p class="main__learn__text">
+					See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+					but understanding how developers think is invaluable.
+				</p>
+			</section>
+			<section class="main__subscribe">
+				<a href="#" class="main__subscribe__link">Try it free 7 days <span>then $20/mo. thereafter</span></a>
+
+				<div class="main__subscribe__info">
+					<form action="#" class="main__subscribe__form">
+						<div class="main__subscribe__input-with-icon">
+							<input type="text" id="firstname" class="main__subscribe__input" placeholder="First Name" />
+							<ion-icon name="alert-outline"></ion-icon>
+							<p class="main__subscribe__error">First Name cannot be empty</p>
+						</div>
+
+						<div class="main__subscribe__input-with-icon">
+							<input type="text" id="lastname" class="main__subscribe__input" placeholder="Last Name" />
+							<ion-icon name="alert-outline"></ion-icon>
+							<p class="main__subscribe__error">Last Name cannot be empty</p>
+						</div>
+
+						<div class="main__subscribe__input-with-icon">
+							<input type="text" id="email" class="main__subscribe__input" placeholder="Email Address" />
+							<ion-icon name="alert-outline"></ion-icon>
+							<p class="main__subscribe__error">Looks like this is not an Email</p>
+						</div>
+
+						<div class="main__subscribe__input-with-icon">
+							<input type="password" id="password" class="main__subscribe__input" placeholder="Password" />
+							<ion-icon name="alert-outline"></ion-icon>
+							<p class="main__subscribe__error">Password cannot be empty</p>
+						</div>
+						<br />
+
+						<button type="submit" class="main__subscribe__btn">Claim your free trial</button>
+					</form>
+
+					<p class="main__subscribe__p">
+						By clicking the button, you are agreeing to our <span>Terms and Services</span>
+					</p>
+				</div>
+			</section>
+		</div>
+
+		<script src="js/form-error.js"></script>
+	</body>
+</html>
